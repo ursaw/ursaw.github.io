@@ -1,4 +1,4 @@
-baseurl = "https://example.com/"
+baseurl = "https://ursaw.github.io/"
 title = "hugo example"
 # theme = "hugo-theme-console"
 languageCode = "en-us"
