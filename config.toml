@@ -1,5 +1,5 @@
 baseurl = "https://ursaw.github.io/"
-title = "hugo example"
+title = "urs w"
 # theme = "hugo-theme-console"
 languageCode = "en-us"
 
@@ -9,7 +9,7 @@ languageCode = "en-us"
 
   # Set the animation style -- https://animate.style/
   # To disable animations, please remove or comment animationStyle parameter
-  animateStyle = "animated zoomIn fast" 
+  # animateStyle = "animated zoomIn fast" 
 
   [[params.navlinks]]
   name = "about/"
