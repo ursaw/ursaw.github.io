@@ -7,7 +7,7 @@
 <h1>{{ .Title }}</h1>
 
 <div >
-{{ .PublishDate.Format "Jan. 2, 2006" }}
+{{ .PublishDate.Format "2006-01-02" }}
 {{ if .Params.tags }}
 
     {{ range .Params.tags }}

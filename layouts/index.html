@@ -1,5 +1,6 @@
 {{ define "main" }}
 
+
 <h1>About</h1>
 
 <p>
@@ -14,7 +15,7 @@ Hi, this is a small blog from myself.  <a href="about/">(more)</a>
     {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
         <div class="post">
             <p>
-                <div class="date">{{ .PublishDate.Format "2006-Jan-02" }}</div>
+                <div class="date">{{ .PublishDate.Format "2006-01-02"}}</div>
                 <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
                 {{ .Summary }}
             </p>
