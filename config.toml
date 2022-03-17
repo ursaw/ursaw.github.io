@@ -1,5 +1,5 @@
 baseurl = "https://ursaw.github.io/"
-title = "urs w"
+title = "ursaw"
 # theme = "hugo-theme-console"
 languageCode = "en-us"
 
@@ -13,12 +13,17 @@ languageCode = "en-us"
 
   [[params.navlinks]]
   name = "about/"
-  url = "about/"
+  url = "/about/"
 
   [[params.navlinks]]
   name = "posts/"
-  url = "posts/"
+  url = "/posts/"
   
-  #[[params.navlinks]]
-  #name = "photos/"
-  #url = "photos/"
+  [[params.navlinks]]
+  name = "tags/"
+  url = "/tags/"
+  
+  
+ # [[params.navlinks]]
+ # name = "photos/"
+ # url = "photos/"
