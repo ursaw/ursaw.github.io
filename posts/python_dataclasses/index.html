@@ -51,63 +51,63 @@ default library, which enables the developer to do an object oriented modelling 
 <p>Never use the <code>__init__</code> method, this is generated internally, instead use the <a href=https://docs.python.org/3/library/dataclasses.html#post-init-processing><code>__post_init__</code></a> method optionally with <code>InitVar</code> attributes. You wont see the <code>InitVar</code> attributes in the JSON file.</p>
 <h2 id=implementation-example>Implementation example</h2>
 <h3 id=code>code</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass, field, InitVar
-<span style=color:#f92672>from</span> dataclasses_json <span style=color:#f92672>import</span> dataclass_json
-<span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> List, Dict
-
-<span style=color:#f92672>import</span> json
-
-<span style=color:#a6e22e>@dataclass_json</span>
-<span style=color:#a6e22e>@dataclass</span>
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AnotherClass</span>:
-    a_integer_att: int <span style=color:#f92672>=</span> field(default<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>)
-
-<span style=color:#a6e22e>@dataclass_json</span>
-<span style=color:#a6e22e>@dataclass</span>
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ExampleClass</span>:
-    <span style=color:#e6db74>&#34;&#34;&#34;Simple Example class with reference to another class.&#34;&#34;&#34;</span>
-    identificator: str <span style=color:#f92672>=</span> field(default<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>)
-
-    a_list_of_strings: List[str] <span style=color:#f92672>=</span> field(default_factory<span style=color:#f92672>=</span>list)
-    <span style=color:#e6db74>&#34;&#34;&#34;List[str]: A list of strings.&#34;&#34;&#34;</span>
-
-    a_dict_of_objects: Dict[str, AnotherClass] <span style=color:#f92672>=</span> field(default_factory<span style=color:#f92672>=</span>dict)
-    <span style=color:#e6db74>&#34;&#34;&#34;Dict[str, Field]: A dictionary of objects of AnotherClass.&#34;&#34;&#34;</span>
-
-    a_helper: InitVar[str] <span style=color:#f92672>=</span> <span style=color:#66d9ef>None</span>
-
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>__post_init__</span>(self, a_helper):
-        print(
-            <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;post init is called from generated (never overwrite it!) card.__init__() with a_helper=&#39;</span><span style=color:#e6db74>{</span>a_helper<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;&#34;</span>)
-
-<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;__main__&#39;</span>:
-    print(<span style=color:#e6db74>&#34;card with constructor in main.&#34;</span>)
-    ea <span style=color:#f92672>=</span> ExampleClass(<span style=color:#e6db74>&#34;id01&#34;</span>, a_dict_of_objects<span style=color:#f92672>=</span>{<span style=color:#e6db74>&#34;a&#34;</span>: AnotherClass(<span style=color:#ae81ff>1</span>), <span style=color:#e6db74>&#34;b&#34;</span>: AnotherClass(<span style=color:#ae81ff>99</span>)}, a_helper<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hey ho!&#34;</span>)
-    outfile_name <span style=color:#f92672>=</span> <span style=color:#e6db74>r</span><span style=color:#e6db74>&#34;C:\temp\dataclass_example.json&#34;</span>
-    
-    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34; * original id of object is </span><span style=color:#e6db74>{</span>id(ea)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
-    <span style=color:#75715e># writing</span>
-    <span style=color:#66d9ef>with</span> open(outfile_name, <span style=color:#e6db74>&#39;w&#39;</span>) <span style=color:#66d9ef>as</span> file:
-           json<span style=color:#f92672>.</span>dump(ea<span style=color:#f92672>.</span>to_dict(), file, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
-
-    <span style=color:#75715e># reading</span>
-    <span style=color:#66d9ef>with</span> open(outfile_name, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> file:
-        object_as_json <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>load(file)
-        print(<span style=color:#e6db74>&#34;object from json file.&#34;</span>)
-        ea <span style=color:#f92672>=</span> ExampleClass<span style=color:#f92672>.</span>from_dict(object_as_json)
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=1><a style=outline:none;text-decoration:none;color:inherit href=#1> 1</a></span><span style=color:#000;font-weight:700>from</span> <span style=color:#555>dataclasses</span> <span style=color:#000;font-weight:700>import</span> dataclass, field, InitVar
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=2><a style=outline:none;text-decoration:none;color:inherit href=#2> 2</a></span><span style=color:#000;font-weight:700>from</span> <span style=color:#555>dataclasses_json</span> <span style=color:#000;font-weight:700>import</span> dataclass_json
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=3><a style=outline:none;text-decoration:none;color:inherit href=#3> 3</a></span><span style=color:#000;font-weight:700>from</span> <span style=color:#555>typing</span> <span style=color:#000;font-weight:700>import</span> List, Dict
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=4><a style=outline:none;text-decoration:none;color:inherit href=#4> 4</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=5><a style=outline:none;text-decoration:none;color:inherit href=#5> 5</a></span><span style=color:#000;font-weight:700>import</span> <span style=color:#555>json</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=6><a style=outline:none;text-decoration:none;color:inherit href=#6> 6</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=7><a style=outline:none;text-decoration:none;color:inherit href=#7> 7</a></span><span style=color:#3c5d5d;font-weight:700>@dataclass_json</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=8><a style=outline:none;text-decoration:none;color:inherit href=#8> 8</a></span><span style=color:#3c5d5d;font-weight:700>@dataclass</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=9><a style=outline:none;text-decoration:none;color:inherit href=#9> 9</a></span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>AnotherClass</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=10><a style=outline:none;text-decoration:none;color:inherit href=#10>10</a></span>    a_integer_att: <span style=color:#0086b3>int</span> <span style=color:#000;font-weight:700>=</span> field(default<span style=color:#000;font-weight:700>=</span><span style=color:#000;font-weight:700>None</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=11><a style=outline:none;text-decoration:none;color:inherit href=#11>11</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=12><a style=outline:none;text-decoration:none;color:inherit href=#12>12</a></span><span style=color:#3c5d5d;font-weight:700>@dataclass_json</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=13><a style=outline:none;text-decoration:none;color:inherit href=#13>13</a></span><span style=color:#3c5d5d;font-weight:700>@dataclass</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=14><a style=outline:none;text-decoration:none;color:inherit href=#14>14</a></span><span style=color:#000;font-weight:700>class</span> <span style=color:#458;font-weight:700>ExampleClass</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=15><a style=outline:none;text-decoration:none;color:inherit href=#15>15</a></span>    <span style=color:#d14>&#34;&#34;&#34;Simple Example class with reference to another class.&#34;&#34;&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=16><a style=outline:none;text-decoration:none;color:inherit href=#16>16</a></span>    identificator: <span style=color:#0086b3>str</span> <span style=color:#000;font-weight:700>=</span> field(default<span style=color:#000;font-weight:700>=</span><span style=color:#000;font-weight:700>None</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=17><a style=outline:none;text-decoration:none;color:inherit href=#17>17</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=18><a style=outline:none;text-decoration:none;color:inherit href=#18>18</a></span>    a_list_of_strings: List[<span style=color:#0086b3>str</span>] <span style=color:#000;font-weight:700>=</span> field(default_factory<span style=color:#000;font-weight:700>=</span><span style=color:#0086b3>list</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=19><a style=outline:none;text-decoration:none;color:inherit href=#19>19</a></span>    <span style=color:#d14>&#34;&#34;&#34;List[str]: A list of strings.&#34;&#34;&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=20><a style=outline:none;text-decoration:none;color:inherit href=#20>20</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=21><a style=outline:none;text-decoration:none;color:inherit href=#21>21</a></span>    a_dict_of_objects: Dict[<span style=color:#0086b3>str</span>, AnotherClass] <span style=color:#000;font-weight:700>=</span> field(default_factory<span style=color:#000;font-weight:700>=</span><span style=color:#0086b3>dict</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=22><a style=outline:none;text-decoration:none;color:inherit href=#22>22</a></span>    <span style=color:#d14>&#34;&#34;&#34;Dict[str, Field]: A dictionary of objects of AnotherClass.&#34;&#34;&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=23><a style=outline:none;text-decoration:none;color:inherit href=#23>23</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=24><a style=outline:none;text-decoration:none;color:inherit href=#24>24</a></span>    a_helper: InitVar[<span style=color:#0086b3>str</span>] <span style=color:#000;font-weight:700>=</span> <span style=color:#000;font-weight:700>None</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=25><a style=outline:none;text-decoration:none;color:inherit href=#25>25</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=26><a style=outline:none;text-decoration:none;color:inherit href=#26>26</a></span>    <span style=color:#000;font-weight:700>def</span> <span style=color:#900;font-weight:700>__post_init__</span>(<span style=color:#999>self</span>, a_helper):
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=27><a style=outline:none;text-decoration:none;color:inherit href=#27>27</a></span>        <span style=color:#0086b3>print</span>(
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=28><a style=outline:none;text-decoration:none;color:inherit href=#28>28</a></span>            <span style=color:#d14>f</span><span style=color:#d14>&#34;post init is called from generated (never overwrite it!) card.__init__() with a_helper=&#39;</span><span style=color:#d14>{</span>a_helper<span style=color:#d14>}</span><span style=color:#d14>&#39;&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=29><a style=outline:none;text-decoration:none;color:inherit href=#29>29</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=30><a style=outline:none;text-decoration:none;color:inherit href=#30>30</a></span><span style=color:#000;font-weight:700>if</span> __name__ <span style=color:#000;font-weight:700>==</span> <span style=color:#d14>&#39;__main__&#39;</span>:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=31><a style=outline:none;text-decoration:none;color:inherit href=#31>31</a></span>    <span style=color:#0086b3>print</span>(<span style=color:#d14>&#34;card with constructor in main.&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=32><a style=outline:none;text-decoration:none;color:inherit href=#32>32</a></span>    ea <span style=color:#000;font-weight:700>=</span> ExampleClass(<span style=color:#d14>&#34;id01&#34;</span>, a_dict_of_objects<span style=color:#000;font-weight:700>=</span>{<span style=color:#d14>&#34;a&#34;</span>: AnotherClass(<span style=color:#099>1</span>), <span style=color:#d14>&#34;b&#34;</span>: AnotherClass(<span style=color:#099>99</span>)}, a_helper<span style=color:#000;font-weight:700>=</span><span style=color:#d14>&#34;hey ho!&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=33><a style=outline:none;text-decoration:none;color:inherit href=#33>33</a></span>    outfile_name <span style=color:#000;font-weight:700>=</span> <span style=color:#d14>r</span><span style=color:#d14>&#34;C:\temp\dataclass_example.json&#34;</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=34><a style=outline:none;text-decoration:none;color:inherit href=#34>34</a></span>    
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=35><a style=outline:none;text-decoration:none;color:inherit href=#35>35</a></span>    <span style=color:#0086b3>print</span>(<span style=color:#d14>f</span><span style=color:#d14>&#34; * original id of object is </span><span style=color:#d14>{</span><span style=color:#0086b3>id</span>(ea)<span style=color:#d14>}</span><span style=color:#d14>&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=36><a style=outline:none;text-decoration:none;color:inherit href=#36>36</a></span>    <span style=color:#998;font-style:italic># writing</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=37><a style=outline:none;text-decoration:none;color:inherit href=#37>37</a></span>    <span style=color:#000;font-weight:700>with</span> <span style=color:#0086b3>open</span>(outfile_name, <span style=color:#d14>&#39;w&#39;</span>) <span style=color:#000;font-weight:700>as</span> file:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=38><a style=outline:none;text-decoration:none;color:inherit href=#38>38</a></span>           json<span style=color:#000;font-weight:700>.</span>dump(ea<span style=color:#000;font-weight:700>.</span>to_dict(), file, indent<span style=color:#000;font-weight:700>=</span><span style=color:#099>2</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=39><a style=outline:none;text-decoration:none;color:inherit href=#39>39</a></span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=40><a style=outline:none;text-decoration:none;color:inherit href=#40>40</a></span>    <span style=color:#998;font-style:italic># reading</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=41><a style=outline:none;text-decoration:none;color:inherit href=#41>41</a></span>    <span style=color:#000;font-weight:700>with</span> <span style=color:#0086b3>open</span>(outfile_name, <span style=color:#d14>&#39;r&#39;</span>) <span style=color:#000;font-weight:700>as</span> file:
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=42><a style=outline:none;text-decoration:none;color:inherit href=#42>42</a></span>        object_as_json <span style=color:#000;font-weight:700>=</span> json<span style=color:#000;font-weight:700>.</span>load(file)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=43><a style=outline:none;text-decoration:none;color:inherit href=#43>43</a></span>        <span style=color:#0086b3>print</span>(<span style=color:#d14>&#34;object from json file.&#34;</span>)
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=44><a style=outline:none;text-decoration:none;color:inherit href=#44>44</a></span>        ea <span style=color:#000;font-weight:700>=</span> ExampleClass<span style=color:#000;font-weight:700>.</span>from_dict(object_as_json)
 </code></pre></div><h3 id=serialization>Serialization</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;identificator&#34;</span>: <span style=color:#e6db74>&#34;id01&#34;</span>,
-  <span style=color:#f92672>&#34;a_list_of_strings&#34;</span>: [],
-  <span style=color:#f92672>&#34;a_dict_of_objects&#34;</span>: {
-    <span style=color:#f92672>&#34;a&#34;</span>: {
-      <span style=color:#f92672>&#34;a_integer_att&#34;</span>: <span style=color:#ae81ff>1</span>
-    },
-    <span style=color:#f92672>&#34;b&#34;</span>: {
-      <span style=color:#f92672>&#34;a_integer_att&#34;</span>: <span style=color:#ae81ff>99</span>
-    }
-  }
-}
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=1><a style=outline:none;text-decoration:none;color:inherit href=#1> 1</a></span>{
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=2><a style=outline:none;text-decoration:none;color:inherit href=#2> 2</a></span>  <span style=color:navy>&#34;identificator&#34;</span>: <span style=color:#d14>&#34;id01&#34;</span>,
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=3><a style=outline:none;text-decoration:none;color:inherit href=#3> 3</a></span>  <span style=color:navy>&#34;a_list_of_strings&#34;</span>: [],
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=4><a style=outline:none;text-decoration:none;color:inherit href=#4> 4</a></span>  <span style=color:navy>&#34;a_dict_of_objects&#34;</span>: {
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=5><a style=outline:none;text-decoration:none;color:inherit href=#5> 5</a></span>    <span style=color:navy>&#34;a&#34;</span>: {
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=6><a style=outline:none;text-decoration:none;color:inherit href=#6> 6</a></span>      <span style=color:navy>&#34;a_integer_att&#34;</span>: <span style=color:#099>1</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=7><a style=outline:none;text-decoration:none;color:inherit href=#7> 7</a></span>    },
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=8><a style=outline:none;text-decoration:none;color:inherit href=#8> 8</a></span>    <span style=color:navy>&#34;b&#34;</span>: {
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=9><a style=outline:none;text-decoration:none;color:inherit href=#9> 9</a></span>      <span style=color:navy>&#34;a_integer_att&#34;</span>: <span style=color:#099>99</span>
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=10><a style=outline:none;text-decoration:none;color:inherit href=#10>10</a></span>    }
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=11><a style=outline:none;text-decoration:none;color:inherit href=#11>11</a></span>  }
+<span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f" id=12><a style=outline:none;text-decoration:none;color:inherit href=#12>12</a></span>}
 </code></pre></div>
 <div class=footer>
 Powered by <a href=https://gohugo.io/>Hugo</a> with
