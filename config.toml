@@ -33,7 +33,7 @@ languageCode = "en-us"
     endLevel = 3
     ordered = false
     startLevel = 2
-
+  
   [markup.highlight]
     anchorLineNos = true
     codeFences = true
