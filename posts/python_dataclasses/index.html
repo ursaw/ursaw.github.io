@@ -1,0 +1,113 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>ursaw/posts/python_dataclasses/</title>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="all,follow">
+<meta name=googlebot content="index,follow,snippet,archive">
+<link rel=stylesheet href=https://ursaw.github.io/hugo-theme-console/css/terminal-0.7.2.min.css>
+<link rel=stylesheet href=https://ursaw.github.io/hugo-theme-console/css/animate-4.1.1.min.css>
+<link rel=stylesheet href=https://ursaw.github.io/hugo-theme-console/css/console.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+<meta property="og:title" content="Python dataclasses">
+<meta property="og:description" content>
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ursaw.github.io/posts/python_dataclasses/"><meta property="article:published_time" content="2022-03-18T13:42:12+01:00">
+<meta name=twitter:title content="Python dataclasses">
+<meta name=twitter:description content="Background Although I work quite much with python I really hate the aspect of dynamically typing when using classes. In my opinion you should do on object oriented modelling to define attributes instead of adding attributes during runtime.
+I would like to have something like perls use strict to at least define the attributes, even if the datatype is missing there.
+Python 3.7, pep 557 introduced dataclasses to the default library, which enables the developer to do an object oriented modelling with python.">
+</head>
+<body class=terminal>
+<div class=container>
+<div class=terminal-nav>
+<header class=terminal-logo>
+<div class="logo terminal-prompt">
+<a href=https://ursaw.github.io/ class="no-style site-name">ursaw</a>:~#
+<a href=https://ursaw.github.io/posts>posts</a>/<a href=https://ursaw.github.io/posts/python_dataclasses>python_dataclasses</a>/</div></header>
+<nav class=terminal-menu>
+<ul vocab="https://schema.org/" typeof="BreadcrumbList">
+<li><a href=https://ursaw.github.io/about/ typeof="ListItem">about/</a></li>
+<li><a href=https://ursaw.github.io/posts/ typeof="ListItem">posts/</a></li>
+<li><a href=https://ursaw.github.io/tags/ typeof="ListItem">tags/</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<div class=container>
+<h1>Python dataclasses</h1>
+<h2 id=background>Background</h2>
+<p>Although I work quite much with python I really hate the aspect of dynamically typing when using classes. In my opinion you should do on object oriented modelling to define attributes instead of adding attributes during runtime.</p>
+<p>I would like to have something like <a href=https://perldoc.perl.org/strict>perls use strict</a> to at least define the attributes, even if the datatype is missing there.</p>
+<p>Python 3.7, <a href=https://peps.python.org/pep-0557/>pep 557</a> introduced <a href=https://docs.python.org/3/library/dataclasses.html>dataclasses</a> to the
+default library, which enables the developer to do an object oriented modelling with python. Additionally <a href=https://github.com/lidatong/dataclasses-json>dataclass_json</a> is a simple addition to serialize dataclasses to json files.</p>
+<h2 id=notes-to-the-example>Notes to the example</h2>
+<p>Never use the <code>__init__</code> method, this is generated internally, instead use the <a href=https://docs.python.org/3/library/dataclasses.html#post-init-processing><code>__post_init__</code></a> method optionally with <code>InitVar</code> attributes. You wont see the <code>InitVar</code> attributes in the JSON file.</p>
+<h2 id=implementation-example>Implementation example</h2>
+<h3 id=code>code</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> dataclasses <span style=color:#f92672>import</span> dataclass, field, InitVar
+<span style=color:#f92672>from</span> dataclasses_json <span style=color:#f92672>import</span> dataclass_json
+<span style=color:#f92672>from</span> typing <span style=color:#f92672>import</span> List, Dict
+
+<span style=color:#f92672>import</span> json
+
+<span style=color:#a6e22e>@dataclass_json</span>
+<span style=color:#a6e22e>@dataclass</span>
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AnotherClass</span>:
+    a_integer_att: int <span style=color:#f92672>=</span> field(default<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>)
+
+<span style=color:#a6e22e>@dataclass_json</span>
+<span style=color:#a6e22e>@dataclass</span>
+<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ExampleClass</span>:
+    <span style=color:#e6db74>&#34;&#34;&#34;Simple Example class with reference to another class.&#34;&#34;&#34;</span>
+    identificator: str <span style=color:#f92672>=</span> field(default<span style=color:#f92672>=</span><span style=color:#66d9ef>None</span>)
+
+    a_list_of_strings: List[str] <span style=color:#f92672>=</span> field(default_factory<span style=color:#f92672>=</span>list)
+    <span style=color:#e6db74>&#34;&#34;&#34;List[str]: A list of strings.&#34;&#34;&#34;</span>
+
+    a_dict_of_objects: Dict[str, AnotherClass] <span style=color:#f92672>=</span> field(default_factory<span style=color:#f92672>=</span>dict)
+    <span style=color:#e6db74>&#34;&#34;&#34;Dict[str, Field]: A dictionary of objects of AnotherClass.&#34;&#34;&#34;</span>
+
+    a_helper: InitVar[str] <span style=color:#f92672>=</span> <span style=color:#66d9ef>None</span>
+
+    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>__post_init__</span>(self, a_helper):
+        print(
+            <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;post init is called from generated (never overwrite it!) card.__init__() with a_helper=&#39;</span><span style=color:#e6db74>{</span>a_helper<span style=color:#e6db74>}</span><span style=color:#e6db74>&#39;&#34;</span>)
+
+<span style=color:#66d9ef>if</span> __name__ <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39;__main__&#39;</span>:
+    print(<span style=color:#e6db74>&#34;card with constructor in main.&#34;</span>)
+    ea <span style=color:#f92672>=</span> ExampleClass(<span style=color:#e6db74>&#34;id01&#34;</span>, a_dict_of_objects<span style=color:#f92672>=</span>{<span style=color:#e6db74>&#34;a&#34;</span>: AnotherClass(<span style=color:#ae81ff>1</span>), <span style=color:#e6db74>&#34;b&#34;</span>: AnotherClass(<span style=color:#ae81ff>99</span>)}, a_helper<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;hey ho!&#34;</span>)
+    outfile_name <span style=color:#f92672>=</span> <span style=color:#e6db74>r</span><span style=color:#e6db74>&#34;C:\temp\dataclass_example.json&#34;</span>
+    
+    print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34; * original id of object is </span><span style=color:#e6db74>{</span>id(ea)<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+    <span style=color:#75715e># writing</span>
+    <span style=color:#66d9ef>with</span> open(outfile_name, <span style=color:#e6db74>&#39;w&#39;</span>) <span style=color:#66d9ef>as</span> file:
+           json<span style=color:#f92672>.</span>dump(ea<span style=color:#f92672>.</span>to_dict(), file, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
+
+    <span style=color:#75715e># reading</span>
+    <span style=color:#66d9ef>with</span> open(outfile_name, <span style=color:#e6db74>&#39;r&#39;</span>) <span style=color:#66d9ef>as</span> file:
+        object_as_json <span style=color:#f92672>=</span> json<span style=color:#f92672>.</span>load(file)
+        print(<span style=color:#e6db74>&#34;object from json file.&#34;</span>)
+        ea <span style=color:#f92672>=</span> ExampleClass<span style=color:#f92672>.</span>from_dict(object_as_json)
+</code></pre></div><h3 id=serialization>Serialization</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:#f92672>&#34;identificator&#34;</span>: <span style=color:#e6db74>&#34;id01&#34;</span>,
+  <span style=color:#f92672>&#34;a_list_of_strings&#34;</span>: [],
+  <span style=color:#f92672>&#34;a_dict_of_objects&#34;</span>: {
+    <span style=color:#f92672>&#34;a&#34;</span>: {
+      <span style=color:#f92672>&#34;a_integer_att&#34;</span>: <span style=color:#ae81ff>1</span>
+    },
+    <span style=color:#f92672>&#34;b&#34;</span>: {
+      <span style=color:#f92672>&#34;a_integer_att&#34;</span>: <span style=color:#ae81ff>99</span>
+    }
+  }
+}
+</code></pre></div>
+<div class=footer>
+Powered by <a href=https://gohugo.io/>Hugo</a> with
+<a href=https://github.com/mrmierzejewski/hugo-theme-console/>Console Theme</a>.
+</div>
+</div>
+</body>
+</html>
