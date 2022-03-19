@@ -1,0 +1,30 @@
+{{/*      
+      use from markdown like  {{< refphotos photo="arizona-us"  opts="300x" >}} 
+      to reuse one photo form f.e. content/photos/arizona-us/arizona-us.jpg
+*/}}
+
+
+{{ $photo   :=  .Get "photo" }}
+{{ $ext     := default "jpg"  (.Get "ext")  }}
+{{ $options := default "x200" (.Get "opts") }}
+
+{{ $refpath    :=  printf  "photos/%s/index.md"  $photo }}
+{{ $relimgname :=  printf  "%s.%s"  $photo  $ext }}
+
+{{ with .Site.GetPage $refpath }}
+    {{ $photos_res  := . }}
+    {{ with .Resources.ByType "image" }}
+     {{ range . }}
+        {{ if eq .Name  $relimgname }}
+          {{ $image := . }}
+          {{ with ($image.Resize $options) }}
+          <span style="display: table;">
+                 <a href="{{ $photos_res.RelPermalink }}">
+                    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
+                  </a>
+              </span>	
+          {{ end}} 
+        {{ end }}
+     {{ end }}
+  {{ end }}
+{{ end }}
