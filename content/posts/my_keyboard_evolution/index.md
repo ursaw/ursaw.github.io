@@ -86,6 +86,9 @@ https://matias.ca/switches/quiet/
 <!--  ![](monoblock.png)  -->
 
 text davor
-{{< imageresize monoblock.png "366x200" "Monoblock in OpenSCAD" "xxx">}}
+{{< imageresize file="monoblock.png" opts="300x200" alt="Monoblock in OpenSCAD" >}}
+
+<!--  {{/*  < imageresize file="/photos/chicago-us/chicago-us.jpg" opts="366x200"  >  */}} --> 
+
 
 und es geht weiter
