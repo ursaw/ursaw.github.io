@@ -4,6 +4,7 @@
 {{ partial "mermaid.html" . }}
 {{ end }}
 
+<div  class="single-post">
 <h1>{{ .Title }}</h1>
 
 <div >
@@ -24,5 +25,6 @@
 {{ end }}
 <br/><br/>
 {{ .Content }}
-{{ template "_internal/disqus.html" . }}
+{{/* template "_internal/disqus.html" . */}}
+</div>
 {{ end }}
