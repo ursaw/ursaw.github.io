@@ -1,0 +1,17 @@
+{{/*  solution from  https://stackoverflow.com/questions/48063067/resize-image-in-hugo-v-0-32-x-in-markdown 
+    
+      use from markdown like { { < imageresize monoblock.png "366x200" "Monoblock in OpenSCAD" 
+    
+*/}}
+{{ $original := .Page.Resources.GetMatch (.Get 0) }}
+{{ $options := .Get 1 }}
+{{ .Scratch.Set "image" ($original.Fit $options) }}
+{{ $image := .Scratch.Get "image" }}
+{{ $title := .Get 2 }}
+{{ $caption := .Get 3 }}
+<span style="display: table;">
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $title }}">
+    {{ if  $caption  }}
+        <p style="font-style:italic">{{ $caption }}</p>
+    {{ end }}  
+</span>	

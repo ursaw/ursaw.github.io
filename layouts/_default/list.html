@@ -1,10 +1,12 @@
 {{ define "main" }}
 <h1>{{ .Page.Title }}</h1>
+{{ template "_default/pagination.html" . }}
 <br/>
+
 {{ .Content }}
 
 <div class="posts-list">
-{{ range sort .Data.Pages "Date" "desc" }}
+{{ range sort .Paginator.Pages "Date" "desc" }}
     {{ if not .Params.private }}
         <div class="post">
             <p>
@@ -16,5 +18,8 @@
     {{ end }}
 {{ end }}
 </div>
+
+{{ template "_default/pagination.html" . }}
+
 
 {{ end }}

@@ -2,8 +2,12 @@ baseurl = "https://ursaw.github.io/"
 title = "ursaw"
 # theme = "hugo-theme-console"
 languageCode = "en-us"
+paginate = 999999
 
 [params]
+
+
+
   # Cutting off the page title to two chars for mobile (console-demo -> co)
   titleCutting = true
 
