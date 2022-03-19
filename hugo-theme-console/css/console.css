@@ -277,3 +277,33 @@ figure {
         padding-top: 5px;;
     }
 }
+
+
+.single-post p  {
+    padding-left: 40px;
+}
+
+.single-post ul  {
+    padding-left: 40px;
+}
+
+.single-post h1{
+    padding-left: 0px;
+    font-size: 25px;
+}
+.single-post h2 {
+    padding-left: 10px;
+    font-size: 20px;
+}
+.single-post h3 {
+    padding-left: 20px;
+}
+.single-post h4 {
+    padding-left: 30px;
+}
+.single-post h5 {
+    padding-left: 40px;
+}
+.single-post h6 {
+    padding-left: 40px;
+}
