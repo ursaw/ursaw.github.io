@@ -24,13 +24,15 @@ paginate = 999999
   url = "/posts/"
   
   [[params.navlinks]]
+  name = "photos/"
+  url = "/photos/"
+
+  [[params.navlinks]]
   name = "tags/"
   url = "/tags/"
   
   
- # [[params.navlinks]]
- # name = "photos/"
- # url = "photos/"
+
  
 [markup]
   [markup.tableOfContents]

@@ -31,35 +31,39 @@ Interestingly, recently I pimped the model M with an [yacobo](https://github.com
 
 
 ## Matias Ergopro
+The [mathias ergopro](https://matias.ca/ergopro/pc/) was my first split keyboard,  I bought it used. I really liked the [quite click](https://matias.ca/switches/quiet/) switches and the ability to tent with the nice palm rests. 
+My keyboard suffered from the ergopro disease of multiple key registers every now and then. Since I loved this keyboard, I always forgave it for this.
 
-https://matias.ca/ergopro/pc/
-
-https://matias.ca/switches/quiet/
+As time went on, I didn't feel comfortable with this keyboard anymore because I switched from the German to the American key layout and especially I wanted to go more ergo and try an ortho split. 
 
 
 ## Testing boards
 
+
+
+
 ### Ergodox
+* cherry red
+  
+As the next step I got myself another used keyboard and thought the [ergodox](https://www.ergodox.io/) would be the one for me. I liked to think about the key layout and played around with [oryx](https://configure.zsa.io/ergodox-ez/layouts/default/latest/0). I was excited to flush it with [wally](https://ergodox-ez.com/pages/wally) because I was afraid I might brick it. 
+But in the end I was shocked to find that I was not able to type with it at all.
 
-* red Keycaps
-* first QMK contact 
-* played only around 
-* couldnt get into ortho and thumbusage
+The ortho layout and especially the thumb cluster was so unfamiliar to my fingers that I was unable to type the right keys. My bad typing habits from row staggered didn't work on the column staggered keyboard, so it wasn't fun to use at all. 
 
-### 
+I ended up selling it again. After a few more experiences, I realized that I should have had more typing experience on [keybr](https://keybr.com) to give the ergodox a change. 
 
 
 
 ### DZ60 
-* first not fullsize keyboard
-* switch to US and [US international](https://en.wikipedia.org/wiki/QWERTY#US-International)
-* start soldering
-* modivy 
 * Gateron Browns
-
+  
+After the short ortho experiment I selected a DZ60 to switch 60% and to [US international](https://en.wikipedia.org/wiki/QWERTY#US-International) keyboard layout. This was the first time for me to compile [QMK](https://docs.qmk.fm) on Linux. I felt surprisingly comfortable with this board and with all layers. I bought myself an solder iron an modified the backspace key to a [HHKB](https://www.hhkeyboard.com/d) layout, because this is the part I really like at HHKB, while I dont understand the concept of the missing control keys.
 
 ## keebio Quefrency rev2
-* https://keeb.io/collections/quefrency-split-staggered-65-keyboard
+* Zealios Switch (V2) 62g
+* 
+
+Since I was comfortable with 60% and missing the spilt, it was quite obvious for me that I need to build my first keeb which was a [quefrency](https://keeb.io/collections/quefrency-split-staggered-65-keyboard). First I waited for Rev 2 to come out, then I waited for the German vendor [candykeys] (https://candykeys.com/) to have it. This take quite a long time but gave me an good 
 
 ## Sofle V1
 [sofle](https://josefadamcik.github.io/SofleKeyboard/)
