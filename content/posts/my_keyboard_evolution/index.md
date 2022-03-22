@@ -17,6 +17,7 @@ It was an evolution with multiple small changes, today I advice for the fast jum
 
 
 ## IBM model M
+{{< refphotos photo="kb_yacobo"  opts="250x" >}} 
 I directly started my computer life at university with the [IBM model M](https://en.wikipedia.org/wiki/Model_M_keyboard) on workstations. 
 I was lucky enough to get one of these keyboards and really liked it, the sound (first and foremost to mention), the feel, the size and the aura.
 Luckily, Colleagues endured the keyboard. 
@@ -60,14 +61,38 @@ I ended up selling it again. After a few more experiences, I realized that I sho
 After the short ortho experiment I selected a DZ60 to switch 60% and to [US international](https://en.wikipedia.org/wiki/QWERTY#US-International) keyboard layout. This was the first time for me to compile [QMK](https://docs.qmk.fm) on Linux. I felt surprisingly comfortable with this board and with all layers. I bought myself an solder iron an modified the backspace key to a [HHKB](https://www.hhkeyboard.com/d) layout, because this is the part I really like at HHKB, while I dont understand the concept of the missing control keys.
 
 ## keebio Quefrency rev2
-* Zealios Switch (V2) 62g
-* 
 
-Since I was comfortable with 60% and missing the spilt, it was quite obvious for me that I need to build my first keeb which was a [quefrency](https://keeb.io/collections/quefrency-split-staggered-65-keyboard). First I waited for Rev 2 to come out, then I waited for the German vendor [candykeys] (https://candykeys.com/) to have it. This take quite a long time but gave me an good 
+{{< refphotos photo="kb_quefrency"  opts="250x" >}} 
+
+* Zealios Switch (V2) 62g
+
+
+Since I was comfortable with 60% and missing the spilt, it was quite obvious for me that I need to build my first keeb which was a [quefrency](https://keeb.io/collections/quefrency-split-staggered-65-keyboard). First I waited for Rev 2 to come out, then I waited for the German vendor [candykeys](https://candykeys.com/) to have it. That took quite a while, but I got a good idea that an important part of building keyboards is waiting for parts.
+
+I messed up the soldering and had to rebuild one half, which means waiting for parts again...
+
+In the end I used it for a very short period, because I started to go to ortho layout. 
+I like the keyboard very much because it is an smart interpretation of a split 60%, but for a while now, I think of selling...
 
 ## Sofle V1
-[sofle](https://josefadamcik.github.io/SofleKeyboard/)
+
+{{< refphotos photo="kb_sofle"  opts="250x" >}} 
+
+* [Sofle V1](https://josefadamcik.github.io/SofleKeyboard/)
 * Zealios Switch (V2) 67g or Kaihl White
+
+For my second built I dared a more complex build, and it take a while for me to get used to solder SMD diods. I already summarized my [first impression](/posts/thoughts_soflev1) of the Sofle, and this is the keyboard I have used most often (besides the [model M](#ibm-model-m)).
+
+Most of the following builds are like 4x6+4 boards to me, as I can't live so far with fewer keys.
+
+### Design Error
+The Sofle has a small design flaw for which I have no solution. 
+
+If you follow the key press, you hit the switch, which is mounted in the switch plate. The plate is connected with stand-offs to the back plate, which is located on the desk. The switches are plugged into Kailh hot-swap sockets on the PCB, which is floating and attached only to the sockets.
+
+The floating is fine, but the problems starts with the encoders, which are only connected to the PCB. This means that any pressure on an encoder moves the switches in the sockets. 
+
+From time to time and after transport, I had to rearrange the switches in the sockets.
 
 
 ## Pteron 56
@@ -75,11 +100,14 @@ Since I was comfortable with 60% and missing the spilt, it was quite obvious for
 * Gateron Silent Brown
 
 ## Dactyl / Scylla
+{{< refphotos photo="kb_scylla"  opts="250x" >}} 
+
 * https://bastardkb.com/scylla
 * Gazzew Boba U4 Silent Tactile Switch 62g
 
 
 ## Cocofly
+{{< refphotos photo="kb_chocofly"  opts="250x" >}} 
 * https://github.com/vlkv/chocofly
 * white chocs
 * JLPCB 

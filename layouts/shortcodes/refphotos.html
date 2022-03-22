@@ -18,10 +18,10 @@
         {{ if eq .Name  $relimgname }}
           {{ $image := . }}
           {{ with ($image.Resize $options) }}
-          <span style="display: table;">
-                 <a href="{{ $photos_res.RelPermalink }}">
-                    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}">
-                  </a>
+              <span style="display: table; float: right;">
+                <a href="{{ $photos_res.RelPermalink }}">
+                  <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"  >
+                </a>
               </span>	
           {{ end}} 
         {{ end }}
