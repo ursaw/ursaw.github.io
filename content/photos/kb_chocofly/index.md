@@ -11,4 +11,4 @@ type = "gallery"
 * JLPCB 
 * EVQ WGD0001 barrel encoder  (aliexpress only)
 
-Best postion for the chocofly is on the laptop.
+Best postion for the Chocofly is Sonshi Style (on the keyboard of the laptop).

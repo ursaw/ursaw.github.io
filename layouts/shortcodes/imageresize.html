@@ -5,11 +5,13 @@
 */}}
 {{ $original := .Page.Resources.GetMatch (.Get "file") }}
 {{ $options := .Get "opts" }}
+{{ $caption := .Get "caption" }}
+
 {{ .Scratch.Set "image" ($original.Fit $options) }}
 {{ $image := .Scratch.Get "image" }}
 {{ $title := .Get "alt" }}
-{{ $caption := .Get "caption" }}
-<span style="display: table;">
+
+<span style="display: table;float: right;">
     <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ $title }}">
     {{ if  $caption  }}
         <p style="font-style:italic">{{ $caption }}</p>
