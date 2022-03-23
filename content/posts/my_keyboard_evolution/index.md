@@ -133,10 +133,11 @@ The tenting angle could be a little higher, so I had Treatstock print out the [3
 
 ## Chocofly
 {{< refphotos photo="kb_chocofly"  opts="250x" >}} 
+
 * https://github.com/vlkv/chocofly
 * white chocs
 * JLPCB 
-* EVQ WGD0001 barrel encoder  (aliexpress only)
+* EVQ WGD0001 barrel encoder (aliexpress only)
 
 Right after I discovered [Chocofly](https://github.com/vlkv/chocofly), I made the decision to build it to come accross the disadvantages of the Pteron 56.Switching to chocs was a new adventure because I had to purchase new switches as well as keycaps. I discovered white chocs, which I really like. Afterwards I also got Kailh MX white for my Sofle, but I like prefere the chocs.
 
