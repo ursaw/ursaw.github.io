@@ -1,6 +1,6 @@
 +++
 title = "My Keyboard Evolution"
-date = 2022-03-23
+date = 2022-08-29
 tags = ['keyboards']
 +++
 
@@ -102,6 +102,11 @@ From time to time and after transport, I had to rearrange the switches in the so
 
 
 ## Pteron 56
+
+
+{{< refphotos photo="kb_Pteron56"  opts="250x" >}} 
+
+
 * https://github.com/FSund/pteron-keyboard
 * Gateron Silent Brown
 
@@ -152,19 +157,33 @@ As you can see in the picture, I don't even need all the thumb keys because they
 
 
 ## Dactyl monoblock
-* https://github.com/joshreve/dactyl-keyboard/pull/79
 
-My next keyboard will be a Dactyl monoblock for the company. 
-{{< imageresize file="monoblock.png" opts="300x200" alt="Monoblock in OpenSCAD"  >}}
+{{< refphotos photo="kb_Dactyl_monoblock"  opts="250x" >}} 
 
-Therefore I updated the [python dacyl](https://github.com/joshreve/dactyl-keyboard/) code and already have a nice printout from treat stock. 
+* https://github.com/joshreve/dactyl-keyboard/pull/79, and [pull req. 85](https://github.com/joshreve/dactyl-keyboard/pull/85)
+* Treatstock printout
+* both Gateron brown
+* 2nd iteration with rotary encode (page up/down and sound)
 
-I have already sourced all the parts and am looking for a window of time to build it. Unfortunately, in the meantime, I have more ideas that I will incorporate into the next monoblock:
+Based on the [python dactyl](https://github.com/joshreve/dactyl-keyboard/) code I added a design parameter __monoblock__ with two iterations so far. The second version has room for an trackball.
 
-### Upcoming monoblock
+Since for cost reasons I used a pro micro for both versions, I had to use a 8x8 matrix for the rotary encoder version instead of a simple 12x5 matrix. Soldering the 8x8 matrix makes more work and trouble than I thought in advance. Unfortunately, it was only after the fact that I found a way to enable more pins at https://golem.hu/guide/pro-micro-upgrade.
+
+I use it in the office, but since I use a Scylla at home, I am always confused with the thumb cluster.
+
+Therefore I have to go on...
+
+## Upcoming trackball monoblock
+
+
 - trackball in the middle,
 - internal USB hub,
 - STM32F103C8T BLue Pill based.
+- 
+My next keyboard will be a Dactyl monoblock with a center trackball, which will be something like the Scylla with an internal trackball.
+
+
+I have already sourced all the parts and am looking for a window of time to build it. Unfortunately, in the meantime, I have more ideas that I will incorporate into the next monoblock:
 
 But will this really be my endgame?
 
