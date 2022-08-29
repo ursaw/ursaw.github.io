@@ -13,7 +13,7 @@
 <meta property="og:title" content="My Keyboard Evolution">
 <meta property="og:description" content>
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ursaw.github.io/posts/my_keyboard_evolution/"><meta property="article:published_time" content="2022-03-23T00:00:00+00:00">
+<meta property="og:url" content="https://ursaw.github.io/posts/my_keyboard_evolution/"><meta property="article:published_time" content="2022-08-29T00:00:00+00:00">
 <meta name=twitter:title content="My Keyboard Evolution">
 <meta name=twitter:description content="TL;DR This is my historically ordered journey into ergonomic keyboards. I try to explain the background of each choice, the advantages and limitations.
 My main work on computers is coding, and I like terminals/consoles and try avoid using the mouse as much as possible.
@@ -41,7 +41,7 @@ It was an evolution with many small changes, today I advise a quick jump to a sp
 <div class=single-post>
 <h1>My Keyboard Evolution</h1>
 <div>
-2022-03-23
+2022-08-29
 &nbsp;<a class=not-first:ml-3 href=/tags/keyboards>#keyboards</a>
 </div>
 <br><br>
@@ -117,6 +117,11 @@ I like the keyboard very much because it is an smart interpretation of a split 6
 <p>The floating is fine, but the problems starts with the encoders, which are only connected to the PCB. This means that any pressure on an encoder moves the switches in the sockets.</p>
 <p>From time to time and after transport, I had to rearrange the switches in the sockets.</p>
 <h2 id=pteron-56>Pteron 56</h2>
+<span style=display:table;float:right>
+<a href=/photos/kb_pteron56/>
+<img src=/photos/kb_pteron56/kb_Pteron56_huf3dc409c6440d3068a4f8fcd97181f46_96647_250x0_resize_q75_box.jpg width=250 height=156>
+</a>
+</span>
 <ul>
 <li><a href=https://github.com/FSund/pteron-keyboard>https://github.com/FSund/pteron-keyboard</a></li>
 <li>Gateron Silent Brown</li>
@@ -167,21 +172,29 @@ I like the keyboard very much because it is an smart interpretation of a split 6
 <p>Although I like the rotary encoder on the Sofle for page up and down, I rarely use the barrel encoder, maybe it&rsquo;s on the wrong hand, or maybe it&rsquo;s too far away.</p>
 <p>As you can see in the picture, I don&rsquo;t even need all the thumb keys because they are too far inside for me.</p>
 <h2 id=dactyl-monoblock>Dactyl monoblock</h2>
-<ul>
-<li><a href=https://github.com/joshreve/dactyl-keyboard/pull/79>https://github.com/joshreve/dactyl-keyboard/pull/79</a></li>
-</ul>
-<p>My next keyboard will be a Dactyl monoblock for the company.
 <span style=display:table;float:right>
-<img src=/posts/my_keyboard_evolution/monoblock_hub759d6b37a5bb5311eb8a2f84575af55_58333_300x200_fit_box_3.png width=300 height=164 alt="Monoblock in OpenSCAD">
-</span> </p>
-<p>Therefore I updated the <a href=https://github.com/joshreve/dactyl-keyboard/>python dacyl</a> code and already have a nice printout from treat stock.</p>
-<p>I have already sourced all the parts and am looking for a window of time to build it. Unfortunately, in the meantime, I have more ideas that I will incorporate into the next monoblock:</p>
-<h3 id=upcoming-monoblock>Upcoming monoblock</h3>
+<a href=/photos/kb_dactyl_monoblock/>
+<img src=/photos/kb_dactyl_monoblock/kb_Dactyl_monoblock_hucbf01c0cb27b076f465415d0ccbd9aa9_127482_250x0_resize_q75_box.jpg width=250 height=236>
+</a>
+</span>
+<ul>
+<li><a href=https://github.com/joshreve/dactyl-keyboard/pull/79>https://github.com/joshreve/dactyl-keyboard/pull/79</a>, and <a href=https://github.com/joshreve/dactyl-keyboard/pull/85>pull req. 85</a></li>
+<li>Treatstock printout</li>
+<li>both Gateron brown</li>
+<li>2nd iteration with rotary encode (page up/down and sound)</li>
+</ul>
+<p>Based on the <a href=https://github.com/joshreve/dactyl-keyboard/>python dactyl</a> code I added a design parameter <strong>monoblock</strong> with two iterations so far. The second version has room for an trackball.</p>
+<p>Since for cost reasons I used a pro micro for both versions, I had to use a 8x8 matrix for the rotary encoder version instead of a simple 12x5 matrix. Soldering the 8x8 matrix makes more work and trouble than I thought in advance. Unfortunately, it was only after the fact that I found a way to enable more pins at <a href=https://golem.hu/guide/pro-micro-upgrade>https://golem.hu/guide/pro-micro-upgrade</a>.</p>
+<p>I use it in the office, but since I use a Scylla at home, I am always confused with the thumb cluster.</p>
+<p>Therefore I have to go on&mldr;</p>
+<h2 id=upcoming-trackball-monoblock>Upcoming trackball monoblock</h2>
 <ul>
 <li>trackball in the middle,</li>
 <li>internal USB hub,</li>
 <li>STM32F103C8T BLue Pill based.</li>
+<li></li>
 </ul>
+<p>I have already sourced all the parts and am looking for a window of time to build it. Unfortunately, in the meantime, I have more ideas that I will incorporate into the next monoblock:</p>
 <p>But will this really be my endgame?</p>
 <p>I will update.</p>
 </div>
