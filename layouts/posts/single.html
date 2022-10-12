@@ -17,6 +17,12 @@
 {{ end }}
 </div>
 
+{{ if  (gt .WordCount 400 ) }}
+
+    {{.TableOfContents}}
+
+{{ end }}
+
 {{ with .Params.linkedin }}
     // <a href="{{ . }}">Linkedin</a>
 {{ end }}
