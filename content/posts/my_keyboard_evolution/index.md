@@ -175,15 +175,20 @@ Therefore I have to go on...
 
 ## Upcoming trackball monoblock
 
-
-- trackball in the middle,
-- internal USB hub,
-- STM32F103C8T BLue Pill based.
-- 
-My next keyboard will be a Dactyl monoblock with a center trackball, which will be something like the Scylla with an internal trackball.
+<!---
+![](monoblock_trackball.png)
+--->
 
 
-I have already sourced all the parts and am looking for a window of time to build it. Unfortunately, in the meantime, I have more ideas that I will incorporate into the next monoblock:
+{{< imageresize file="monoblock_trackball.png"  opts="300x200"  alt="Monoblock in OpenSCAD" >}} 
+
+
+My next keyboard will be a Dactyl monoblock with a center trackball, which will be something like the [Charybdis](https://bastardkb.com/charybdis/) with an [internal trackball (github)](https://github.com/ursaw/dactyl-keyboard/tree/monoblock_center_trackball).
+
+I got confused with the mini thumbc luster on the Dactyl monoblock and the thumbcluster with 5 keys on the Scylla. Therefore I go with the __MINI__ 5-key thumb cluster now.
+
+I have already sourced all the parts and am looking for a window of time to build it. Unfortunately, in the meantime, I have more ideas that I will incorporate into the next monoblock. Optionally I will go with an STM32F103C8T Blue Pill based and may add an internal USB port.
+
 
 But will this really be my endgame?
 
