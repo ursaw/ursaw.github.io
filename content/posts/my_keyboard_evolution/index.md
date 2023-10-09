@@ -156,6 +156,8 @@ Although I like the rotary encoder on the Sofle for page up and down, I rarely u
 As you can see in the picture, I don't even need all the thumb keys because they are too far inside for me.  
 
 
+
+
 ## Dactyl monoblock
 
 {{< refphotos photo="kb_Dactyl_monoblock"  opts="250x" >}} 
@@ -173,6 +175,18 @@ I use it in the office, but since I use a Scylla at home, I am always confused w
 
 Therefore I have to go on...
 
+## Dactyl / Charybdis
+{{< refphotos photo="kb_charybdis"  opts="250x" >}} 
+* https://bastardkb.com/charybdis/
+* Kailh tactil white
+* Matt3o MT3 /dev/tty keycaps
+* ~~[Amoeba king royals](https://github.com/mtl/keyboard-pcbs)~~ hand wired
+
+Before going the step to my long planned dactyl monoblock with a trackball I decided to take a very small evolution step and build a [bastard Charybdis](https://bastardkb.com/charybdis/). 
+Initially I was going for [Amoeba king royals](https://github.com/mtl/keyboard-pcbs) to have the ability to change switched with Kailh hot swap sockets, but this turned out not to be the best idea. 
+When I wanted to place the soldered PCBs in the case, I realized that they don't really fit well, and it would be a hazel to exchange the switches. Setting up the PCBs is a very long and tedious work and in my opinion it only make sense to use them, when additionally set up LEDS (SK6812 mini). Therefore, I just soldered the white Kailh into the cases. 
+
+I was really curious about the 34mm trackball 
 ## Upcoming trackball monoblock
 
 <!---

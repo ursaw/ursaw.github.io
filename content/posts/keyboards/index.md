@@ -17,7 +17,7 @@ I like thinking of and building ergonomic input devices, especially keyboards, u
 
 
 * https://jhelvy.shinyapps.io/splitkbcompare
-* https://docs.qmo
 * https://docs.qmk.fm
+
 
 
