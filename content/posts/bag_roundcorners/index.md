@@ -16,6 +16,11 @@ Therefore I developed a sheet to calculate a bag cutting pattern where you just 
 
 You will get the distances to all entry, middle and exit points of the quarter circles (round edges) that you can sew the two peaces together.
 
+### Radius helper
+A simple and solid radius is 5cm. You can use a CD (diameter 12cm, radius with 1cm edge is 5cm) as a 5cm radius template.
+
+### Bag example
+
 {{< imageresize file="example1.jpg"  opts="400x300"  alt="Monoblock in OpenSCAD" >}} 
 
 {{< imageresize file="example2.jpg"  opts="400x300"  alt="Monoblock in OpenSCAD" >}} 
