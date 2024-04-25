@@ -1,4 +1,5 @@
-baseurl = "https://ursaw.github.io/"
+# baseurl = "https://ursaw.github.io/"
+baseurl = "https://blog.wihlfahrt.net/"
 title = "ursaw"
 # theme = "hugo-theme-console"
 languageCode = "en-us"
