@@ -6,7 +6,7 @@ tags = []
 type = "gallery"
 +++
 
-* hhttps://bastardkb.com/charybdis/
+* https://bastardkb.com/charybdis/
 * Kailh tactil white
 * Matt3o MT3 /dev/tty keycaps
 * hand wired

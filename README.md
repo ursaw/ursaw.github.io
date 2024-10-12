@@ -12,4 +12,7 @@ hugo new --kind   posts-bundles posts/my-post
 # server
 
 hugo server -v
+
+
+http://localhost:1313/
 ```
