@@ -8,4 +8,5 @@ type = "gallery"
 
 * https://github.com/sevmeyer/chrumm-keyboard
 * brown switches
+* OEM key caps
 * JLCPCB print

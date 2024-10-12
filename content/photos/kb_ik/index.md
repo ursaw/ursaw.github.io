@@ -8,3 +8,4 @@ type = "gallery"
 
 * https://github.com/ianmaclarty/ik
 * [Gateron Low Profile KS-33](https://ergonautkb.com/docs/switches/gateron-low-profile/) brown
+* XVX key caps

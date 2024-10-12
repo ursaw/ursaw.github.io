@@ -12,16 +12,23 @@ I like thinking of and building ergonomic input devices, especially keyboards, u
 
 ## Links
 
+### Mechanical Keyboards
+- https://www.keyboard.university/
 
-* https://geekhack.org
-* https://deskthority.net
-* https://www.reddit.com/r/ErgoMechKeyboards, https://www.reddit.com/r/olkb
-
-* https://kbd.news, https://golem.hu
-
-
-* https://jhelvy.shinyapps.io/splitkbcompare
-* https://docs.qmk.fm
+### Ergo Mech Networks
+- https://geekhack.org
+- https://deskthority.net
+- https://www.reddit.com/r/ErgoMechKeyboards
+- https://www.reddit.com/r/olkb
+- https://kbd.news 
+- https://golem.hu
 
 
+### DIY pages
+- https://jhelvy.shinyapps.io/splitkbcompare
+- https://yal-tools.github.io/ergo-keyboards/
+- https://docs.qmk.fm
+
+#### Freaky Boards
+* https://svalboard.com
 

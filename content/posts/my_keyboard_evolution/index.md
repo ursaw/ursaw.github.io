@@ -10,7 +10,7 @@ This is my historically ordered journey into ergonomic keyboards. I try to expla
 
 My main work on computers is coding, and I like terminals/consoles and try avoid using the mouse as much as possible.
 
-From IBM model M to Dactyl split ortho keyboard for ergonomics and fun. I am still use QWERTY, but slowly moving to [COLMAK DH](https://colemakmods.github.io/mod-dh/keyboards.html#matrix-keyboards).
+From IBM model M to Dactyl split ortho keyboard for ergonomics and fun. I am still use QWERTY, but try slowly  to move to [COLMAK DH](https://colemakmods.github.io/mod-dh/keyboards.html#matrix-keyboards) with the [tarmac transition](https://forum.colemak.com/topic/1858-learn-colemak-in-steps-with-the-tarmak-layouts/).
 
 It was an evolution with many small changes, today I advise a quick jump to a split ortho keyboard or mono blocks.
 
@@ -186,7 +186,33 @@ Before going the step to my long planned dactyl monoblock with a trackball I dec
 Initially I was going for [Amoeba king royals](https://github.com/mtl/keyboard-pcbs) to have the ability to change switched with Kailh hot swap sockets, but this turned out not to be the best idea. 
 When I wanted to place the soldered PCBs in the case, I realized that they don't really fit well, and it would be a hazel to exchange the switches. Setting up the PCBs is a very long and tedious work and in my opinion it only make sense to use them, when additionally set up LEDS (SK6812 mini). Therefore, I just soldered the white Kailh into the cases. 
 
-I was really curious about the 34mm trackball 
+I was really curious about the 34mm trackball. But in the end I am a little disappointed, because it is not working well for me with thumb.
+
+## IK
+{{< refphotos photo="kb_ik"  opts="250x" >}} 
+* https://github.com/ianmaclarty/ik
+* [Gateron Low Profile KS-33](https://ergonautkb.com/docs/switches/gateron-low-profile/) brown
+* XVX key caps
+
+I was very curious about the Gateron Low Profile switches, and also considered to build an [Ergonaut One](https://ergonautkb.com/docs/keyboards/ergonaut-one/intro/), but i hesitated to get rid of the number row. 
+
+In the end I am very impressed about the reduced height of the IK, this reminds me to the Chocofly. The default GLP browns are quite OK, initially I planed to have my first board with red switches. I build one wit reds and one with browns, but was very disappointed of the reds. 
+
+Its a great travel board, could be seen as a  [voyager](https://www.zsa.io/voyager) clone. Recently, I had the chance to get a voyager in my hands, and teher is no  denying that the voyager has an outstanding quality!
+
+## Chrumm 
+{{< refphotos photo="kb_chrumm"  opts="250x" >}} 
+* https://github.com/sevmeyer/chrumm-keyboard
+* brown switches
+* OEM key caps
+* JLCPCB print
+
+I inserted this build to get my family into ergonomics. They rely on German key layout. The chrumm offers an interesting asymmetrical layout, which gives room for all special keys. The concept and the entire prepared files are of a very high quality, which make its worth to build this board.
+
+This was my first board where I was surprised of the sound, usually this is not an topic for me, but the board is quite solid and offers an nice typing feeling, inclusive an descent sound.  
+
+
+
 ## Upcoming trackball monoblock
 
 <!---
